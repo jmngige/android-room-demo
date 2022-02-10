@@ -6,6 +6,8 @@ import com.starsolns.room1.data.database.MovieDao
 
 class MovieRepository(private val movieDao: MovieDao) {
 
+   val readMovies : LiveData<List<Movie>> = movieDao.readMovies()
+
    suspend fun insertMovie(movie: Movie){
        movieDao.insert(movie)
    }
@@ -18,5 +20,7 @@ class MovieRepository(private val movieDao: MovieDao) {
         movieDao.delete(movie)
     }
 
-    val readMovies : LiveData<List<Movie>> = movieDao.readMovies()
+    suspend fun deleteALlMovies(){
+        movieDao.deleteAllMovies()
+    }
 }

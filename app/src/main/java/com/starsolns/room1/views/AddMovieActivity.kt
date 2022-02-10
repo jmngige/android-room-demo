@@ -43,6 +43,7 @@ class AddMovieActivity : AppCompatActivity() {
         val tittle = binding.addTitle.text.toString()
         val director = binding.addDirector.text.toString()
         val description = binding.addDescription.text.toString()
+        val currentTime = Calendar.getInstance().time
 
         if(TextUtils.isEmpty(tittle) || TextUtils.isEmpty(director) || TextUtils.isEmpty(description)){
             Snackbar.make(findViewById(android.R.id.content), "Please fill all the blank spaces", Snackbar.LENGTH_SHORT)
@@ -50,6 +51,7 @@ class AddMovieActivity : AppCompatActivity() {
                 .setActionTextColor(resources.getColor(android.R.color.white))
                 .show()
         }else{
+
             val movie = Movie(0, tittle, director, description)
             viewModel.addMovie(movie)
             val intent = Intent(this, MainActivity::class.java)

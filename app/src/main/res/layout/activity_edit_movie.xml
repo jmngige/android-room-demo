@@ -41,6 +41,15 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_1_update"
         app:layout_constraintTop_toBottomOf="@id/edit_director"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last updated"
+        android:id="@+id/edit_last_update"
+        app:layout_constraintTop_toBottomOf="@id/edit_description"
+        app:layout_constraintStart_toStartOf="@id/guideline_1_update"
+        android:layout_marginTop="10dp"/>
+
     <Button
         android:id="@+id/btn_cancel_update"
         android:layout_width="wrap_content"
@@ -51,7 +60,7 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/btn_update"
         app:layout_constraintStart_toStartOf="@id/guideline_1_update"
-        app:layout_constraintTop_toBottomOf="@id/edit_description" />
+        app:layout_constraintTop_toBottomOf="@id/edit_last_update" />
 
     <Button
         android:id="@+id/btn_update"

@@ -38,4 +38,10 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    fun deleteAllMovies(){
+        viewModelScope.launch {
+            repository.deleteALlMovies()
+        }
+    }
+
 }
